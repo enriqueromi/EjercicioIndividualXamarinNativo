@@ -18,6 +18,11 @@ namespace App1
     [Activity(Label = "ActivitiLista", MainLauncher = true , Theme = "@style/AppTheme.NoActionBar")]
     public class ActivitiLista : Activity
     {
+        public ActivitiLista()
+        {
+            conexionJson();
+        }
+      
         public class Post
         {
             public int userId { get; set; }
@@ -40,10 +45,11 @@ namespace App1
 
         public Post GetPostById(int id)
         {
+            
             return listaPost.FirstOrDefault(x => x.id == id);
         }
 
-
+    
         private async void conexionJson()
         {
 
@@ -57,6 +63,7 @@ namespace App1
 
             listView.ItemClick += SelectList;
         }
+        
 
         private void SelectList(object sender, AdapterView.ItemClickEventArgs e)
         {
@@ -76,7 +83,6 @@ namespace App1
             conexionJson();
 
 
-            
         }
     }
 }
