@@ -7,10 +7,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hello World!" />
+      
+
+    
+	<ListView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fastScrollEnabled="true" 
+		android:id="@+id/listView1"/>
+	
 
 </RelativeLayout>
