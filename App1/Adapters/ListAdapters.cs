@@ -16,17 +16,17 @@ namespace App1.Adapters
     class ListAdapters : BaseAdapter<Post>
     {
         private Activity context;
-        private List<Post> newPosts;
+        private Post newPosts;
 
-        public ListAdapters(Activity context, List<Post> newPosts)
+        public ListAdapters(Activity context, Post newPosts)
         {
             this.context = context;
             this.newPosts = newPosts;
         }
 
-        public override Post this[int position] => newPosts[position];
+        public override Post this[int position] => newPosts.listaPost[position];
 
-        public override int Count => newPosts.Count;
+        public override int Count => newPosts.listaPost.Count;
 
         public override long GetItemId(int position)
         {

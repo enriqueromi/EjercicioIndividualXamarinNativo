@@ -58,7 +58,9 @@
   <ItemGroup>
     <Compile Include="ActivitiLista.cs" />
     <Compile Include="Adapters\ListAdapters.cs" />
-    <Compile Include="MainActivity1.cs" />
+    <Compile Include="IRepositoryPost.cs" />
+    <Compile Include="MostrarLista.cs" />
+    <Compile Include="Post.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

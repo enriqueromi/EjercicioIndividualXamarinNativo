@@ -18,44 +18,15 @@ namespace App1
     [Activity(Label = "ActivitiLista", MainLauncher = true , Theme = "@style/AppTheme.NoActionBar")]
     public class ActivitiLista : Activity
     {
-        public ActivitiLista()
-        {
-            conexionJson();
-        }
       
-        public class Post
-        {
-            public int userId { get; set; }
-            public int id { get; set; }
-            public string title { get; set; }
-            public string body { get; set; }
-
-            public override string ToString()
-            {
-                return userId + " " + title;
-            }
-
-            
-
-        }
-        private const String url = "https://jsonplaceholder.typicode.com/posts";
-        private List<Post> listaPost;
-        private HttpClient HttpClient = new HttpClient();
         private ListView listView;
+        private Post listaPost;
 
-        public Post GetPostById(int id)
+
+        private void conexionLista()
         {
             
-            return listaPost.FirstOrDefault(x => x.id == id);
-        }
-
-    
-        private async void conexionJson()
-        {
-
-            var contenidoJson = await HttpClient.GetStringAsync(url);
-            var post = JsonConvert.DeserializeObject<List<Post>>(contenidoJson);
-            listaPost = new List<Post>(post);
+            listaPost = new Post();
 
             listView = FindViewById<ListView>(Resource.Id.listView1);
 
@@ -67,9 +38,9 @@ namespace App1
 
         private void SelectList(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var intent = new Intent(this, typeof(MainActivity));
+            var intent = new Intent(this, typeof(MostrarLista));
             var id = (int)e.Id;
-            intent.PutExtra(MainActivity.key_id, id);
+            intent.PutExtra(MostrarLista.key_id, id);
             StartActivity(intent);
 
         }
@@ -80,7 +51,7 @@ namespace App1
 
             SetContentView(Resource.Layout.ListPost);
 
-            conexionJson();
+            conexionLista();
 
 
         }

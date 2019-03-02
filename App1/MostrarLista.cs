@@ -16,9 +16,9 @@ using static App1.ActivitiLista;
 namespace App1
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
-    public class MainActivity : AppCompatActivity
+    public class MostrarLista : AppCompatActivity
     {
-        internal static string key_id = "key_id";
+        internal const string key_id = "key_id";
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,8 +29,8 @@ namespace App1
             var id = Intent.Extras.GetInt(key_id);
             
 
-            var postServices = new ActivitiLista();
-            var post = postServices.GetPostById(id);
+            var postlista = new Post();
+            var post = postlista.GetPostById(id);
 
             var titulo = FindViewById<TextView>(Resource.Id.tituloPost);
             var contenido = FindViewById<TextView>(Resource.Id.ContenidoPost);
