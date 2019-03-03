@@ -22,11 +22,13 @@ namespace App1.Adapters
         {
             this.context = context;
             this.newPosts = newPosts;
+            
         }
 
         public override Post this[int position] => newPosts.listaPost[position];
 
-        public override int Count => newPosts.listaPost.Count;
+        public override int Count => 0;
+
 
         public override long GetItemId(int position)
         {

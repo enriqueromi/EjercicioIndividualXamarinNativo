@@ -22,31 +22,5 @@ namespace App1
         public string title { get; set; }
         public string body { get; set; }
 
-        /* Todo esto es lo que debe ir en el repositorio.
-        private const String url = "https://jsonplaceholder.typicode.com/posts";
-        public List<Post> listaPost { get; set; }
-        private HttpClient HttpClient = new HttpClient();
-
-
-
-        //Esto se que se tiene que poner en el repositorio
-        public Post()
-        {
-            conexionJson();
-        }
-
-        private async void conexionJson()
-        {
-            var contenidoJson = await HttpClient.GetStringAsync(url);
-            var post = JsonConvert.DeserializeObject<List<Post>>(contenidoJson);
-            listaPost = new List<Post>(post);
-        }
-
-        public Post GetPostById(int id)
-        {
-
-            return listaPost.FirstOrDefault(x => x.id == id);
-        }
-        */
     }
 }

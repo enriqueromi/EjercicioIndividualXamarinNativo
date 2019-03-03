@@ -20,7 +20,6 @@ namespace App1
     {
       
         private ListView listView;
-        private Post listaPost;
 
         //Creo una interfaz del repositorio.
         private IRepositoryPost repositoryPost;
@@ -30,6 +29,7 @@ namespace App1
         {
             //Y la implemento
             repositoryPost = new RepositoryPosts();
+            var lista = repositoryPost.ListPost();
             
             listView = FindViewById<ListView>(Resource.Id.listView1);
 

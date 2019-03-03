@@ -15,16 +15,11 @@ namespace App1
 {
     interface IRepositoryPost 
     {
-        String url { get; set; }
         List<Post> listaPost { get; set; }
 
-        //El repositorio debe ser agnostico de como se obtienen los datos. Por lo que no debemos exponer un httpclient. Puede que se obtengan 
-        //de otro lugar.
-        //HttpClient httpClient { get; set; }
+        List<Post> ListPost();
 
-        List<Post> Post();
-
-         Post GetPostById(int id);
+        Post GetPostById(int id);
 
     }
 }
