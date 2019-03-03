@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 
 namespace App1
 {
+    //Este es el modelo de datos por lo que no debe saber nada de como obtener la información
     public class Post 
     {
         public int userId { get; set; }
@@ -21,6 +22,7 @@ namespace App1
         public string title { get; set; }
         public string body { get; set; }
 
+        /* Todo esto es lo que debe ir en el repositorio.
         private const String url = "https://jsonplaceholder.typicode.com/posts";
         public List<Post> listaPost { get; set; }
         private HttpClient HttpClient = new HttpClient();
@@ -45,5 +47,6 @@ namespace App1
 
             return listaPost.FirstOrDefault(x => x.id == id);
         }
+        */
     }
 }

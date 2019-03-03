@@ -20,6 +20,9 @@ namespace App1
     {
         internal const string key_id = "key_id";
 
+        //Vuelvo a instanciar aquí o en su defecto creo un Repository post estatico para toda la app.
+        private IRepositoryPost repositoryPost;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -27,10 +30,10 @@ namespace App1
             SetContentView(Resource.Layout.ListPost);
 
             var id = Intent.Extras.GetInt(key_id);
-            
+            repositoryPost = new RepositoryPosts();
 
             var postlista = new Post();
-            var post = postlista.GetPostById(id);
+            var post = repositoryPost.GetPostById(id);
 
             var titulo = FindViewById<TextView>(Resource.Id.tituloPost);
             var contenido = FindViewById<TextView>(Resource.Id.ContenidoPost);
