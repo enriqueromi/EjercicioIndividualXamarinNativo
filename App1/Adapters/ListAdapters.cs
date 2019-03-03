@@ -16,9 +16,9 @@ namespace App1.Adapters
     class ListAdapters : BaseAdapter<Post>
     {
         private Activity context;
-        private Post newPosts;
+        private IRepositoryPost newPosts;
 
-        public ListAdapters(Activity context, Post newPosts)
+        public ListAdapters(Activity context, IRepositoryPost newPosts)
         {
             this.context = context;
             this.newPosts = newPosts;

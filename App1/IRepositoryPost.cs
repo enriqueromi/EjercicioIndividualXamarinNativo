@@ -17,7 +17,10 @@ namespace App1
     {
         String url { get; set; }
         List<Post> listaPost { get; set; }
-        HttpClient httpClient { get; set; }
+
+        //El repositorio debe ser agnostico de como se obtienen los datos. Por lo que no debemos exponer un httpclient. Puede que se obtengan 
+        //de otro lugar.
+        //HttpClient httpClient { get; set; }
 
         List<Post> Post();
 

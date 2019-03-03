@@ -22,15 +22,18 @@ namespace App1
         private ListView listView;
         private Post listaPost;
 
+        //Creo una interfaz del repositorio.
+        private IRepositoryPost repositoryPost;
+
 
         private void conexionLista()
         {
+            //Y la implemento
+            repositoryPost = new RepositoryPosts();
             
-            listaPost = new Post();
-
             listView = FindViewById<ListView>(Resource.Id.listView1);
 
-            listView.Adapter = new ListAdapters(this,listaPost);
+            listView.Adapter = new ListAdapters(this,repositoryPost);
 
             listView.ItemClick += SelectList;
         }
